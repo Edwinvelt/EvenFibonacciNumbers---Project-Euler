@@ -3,20 +3,35 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 fn main() {
-    let mut num1: i32 = 1;
-    let mut num2: i32 = 2;
+    let mut num1: i128 = 1;
+    let mut num2: i128 = 2;
+    let mut value: i128;
 
-    let i: i32 = 0
+    let mut i: i32 = 0;
     let limit: i32 = 4000000 + 1;
 
+    let mut result_list: Vec<i128> = Vec::new();
+
     // While loop
-    while i < limit;
+    while i < limit {
         // calculate
-
+        match num1.checked_add(num2) {
+            Some(v) => value = v,
+            None => {
+                println!("Overflow occurred");
+                break;
+            }
+        }
         // push answer to Vec<i32>
-
+        result_list.push(value);
+        // Switch num1 & num2
+        num1 = num2;
+        num2 = value;
 
         // i++
-
+        i += 1;
+    }
     // Print result when done
+    println!("{:?}", result_list);
+    println!("Last item place {}", i)
 }
