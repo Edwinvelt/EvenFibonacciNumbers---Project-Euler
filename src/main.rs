@@ -3,14 +3,14 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 fn main() {
-    let mut num1: i128 = 1;
-    let mut num2: i128 = 2;
-    let mut value: i128;
+    let mut num1: u128 = 1;
+    let mut num2: u128 = 2;
+    let mut value: u128;
 
     let mut i: i32 = 0;
     let limit: i32 = 4000000 + 1;
 
-    let mut result_list: Vec<i128> = Vec::new();
+    let mut result_list: Vec<u128> = Vec::new();
 
     // While loop
     while i < limit {
